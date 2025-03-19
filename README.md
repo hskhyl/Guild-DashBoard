@@ -1,5 +1,3 @@
-이하 아직 미구현 사항입니다.
-
 ### 📄 **README.md 초안**
 
 ```markdown
@@ -40,39 +38,46 @@ source venv/bin/activate  # MacOS/Linux
 ```bash
 pip install -r requirements.txt
 ```
+또는 `make setup`을 통해 GitHub 관련 설정까지 한번에 다운로드 받을 수 있습니다.
 
 4. **API 키 설정:**  
-Nexon OpenAPI 사용을 위해 환경 변수에 API 키를 설정합니다.
+Nexon OpenAPI 사용을 위해 `.env`에 API 키를 입력합니다.
 
-```bash
-export NEXON_API_KEY="your_api_key"
-```
 
 ## 🚀 사용 방법
 
-**미정**
+**`uvicorn server:app --reload`**
 
-유저 데이터를 입력하여 맞춤형 길드 추천을 받습니다.
-```bash
-python recommend_guild.py --user_id "유저ID"
-```
 
 ## 📊 대시보드 형태
+`미정`
 
 
 ## 📝 프로젝트 구조
 
 ```
 Guild-Dashboard/
-├─ src/                    # 핵심 소스 코드
-│  ├─ api/                 # Nexon OpenAPI 연동
-│  ├─ analysis/            # 데이터 분석 및 처리
-│  ├─ dashboard/           # Tableau 대시보드 생성
-│  └─ recommend/           # 길드 추천 로직
-├─ data/                   # 수집된 원본 및 처리된 데이터
-├─ assets/                 # 이미지 및 시각화 자료
-├─ README.md               # 프로젝트 설명
-└─ requirements.txt        # 패키지 목록
+├── Makefile                 # 프로젝트 관리용 Makefile (예: 테스트 실행, 빌드 자동화 등)
+├── README.md                # 프로젝트 개요 및 사용법 문서
+├── config.py                # 설정 파일 (API 키, 기본 URL 등 환경 설정)
+├── main.py                  # 실행 진입점 (FastAPI 서버 실행을 포함할 가능성 있음)
+├── pyproject.toml           # Python 프로젝트 설정 파일 (의존성 관리 및 패키징)
+├── requirements.txt         # 프로젝트 의존성 목록 (pip로 설치 가능)
+├── server.py                # FastAPI 서버 설정 및 엔드포인트 정의
+├── src/                     # 소스 코드 디렉토리
+│   ├── api/                 # API 엔드포인트 관련 모듈
+│   │   ├── character.py     # 캐릭터 관련 API 엔드포인트 처리 (조회, 데이터 반환 등)
+│   │   └── guild.py         # 길드 관련 API 엔드포인트 처리 (길드 정보 조회 등)
+│   ├── dashboard/           # 대시보드 관련 코드
+│   │   └── dashboard.py     # 대시보드 데이터 구성 및 시각화 처리
+│   ├── stats/               # 통계 및 데이터 집계 모듈
+│   │   └── aggregator.py    # API 데이터 수집 후 분석 및 집계하는 코드
+│   └── utils.py             # 공통 유틸리티 함수 모음 (예: 요청 처리, 응답 변환)
+└── tests/                   # 테스트 코드 디렉토리
+    ├── test_aggregator.py   # `aggregator.py` 모듈의 테스트 코드
+    ├── test_character.py    # `character.py` 모듈의 테스트 코드
+    └── test_guild.py        # `guild.py` 모듈의 테스트 코드
+
 ```
 
 ## 🤝 기여 방법
