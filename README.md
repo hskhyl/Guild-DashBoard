@@ -37,7 +37,7 @@ source venv/bin/activate  # MacOS/Linux
 ```bash
 pip install -r requirements.txt
 ```
-또는 `make setup`을 통해 GitHub 관련 설정까지 한번에 다운로드 받을 수 있습니다.
+또는 `make setup`을 통해 GitHub 관련 설정까지 한번에 설치할 수 있습니다.
 
 4. **API 키 설정:**  
 Nexon OpenAPI 사용을 위해 `.env`에 API 키를 입력합니다.
