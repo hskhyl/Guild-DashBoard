@@ -1,6 +1,5 @@
 ### 📄 **README.md 초안**
 
-```markdown
 # 🚀 Guild-Dashboard
 
 Nexon OpenAPI를 활용해 길드 정보를 수집하고, 구성원 통계를 시각화하여 Tableau 대시보드와 함께 제공하는 프로젝트입니다. 또한, 수집된 데이터를 기반으로 유저에게 맞춤형 길드를 추천하는 기능도 지원합니다.
